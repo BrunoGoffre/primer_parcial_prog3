@@ -14,8 +14,7 @@ $mensaje = "";
 
 
 switch($path){
-    case '':
-    break;
+    
 
     default:
     echo "Direccion Invalida";

@@ -37,27 +37,29 @@ class Archivos{
             return $lista;
         }
     }
-    public static function GuardaJson($ruta,$objeto){
+    static function GuardaJson($ruta,$objeto){
 
+       
         $retorno = true;
         $array=Archivos::TraerJson($ruta);
-
+        
         if (isset($array)){
-            $ar = fopen("./".$ruta,"w");
-            array_push($array,$objeto);
-            $retorno = fwrite($ar, json_encode($array));
-            fclose($ar);
+                $ar = fopen("./".$ruta,"w");
+                array_push($array,$objeto);
+                $retorno = fwrite($ar, json_encode($array));
+                fclose($ar);
         }else{
-            $array2=array();
-            $ar = fopen("./".$ruta,"w");
-            array_push($array2,$objeto);
-            $retorno = fwrite($ar, json_encode($array2));
-            fclose($ar);
-        }
+                $array2=array();
+                $ar = fopen("./".$ruta,"w");
+                array_push($array2,$objeto);
+                $retorno = fwrite($ar, json_encode($array2));
+                fclose($ar);
+            }
         return $retorno;
     }
-    public static function TraerJson($ruta){
-        if (file_exists($ruta)){
+                
+                public static function TraerJson($ruta){
+                    if (file_exists($ruta)){
             
             $ar = fopen($ruta,"r");
             $lista = json_decode(fgets($ar));
