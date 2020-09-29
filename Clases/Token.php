@@ -6,21 +6,21 @@ use \Firebase\JWT\JWT;
 
 class Token{
   
-  public static function GenerarToken($email,$foto){
+  public static function GenerarToken($email,$tipo){
     $payload = array(
       "iss" => "http://example.org",
       "aud" => "http://example.com",
       "iat" => 1356999524,
       "nbf" => 1357000000,
       "email" => $email,
-      "foto" => $foto
+      "tipo" => $tipo
     );
-    return JWT::encode($payload, "12391122");
+    return JWT::encode($payload, "primerparcial");
   }
   
   public static function AutenticarToken($jwt){
     try {
-      $decode = JWT::decode($jwt,"12391122", array('HS256'));
+      $decode = JWT::decode($jwt,"primerparcial", array('HS256'));
       return  $decode;
       
     } catch (\Throwable $th) {
