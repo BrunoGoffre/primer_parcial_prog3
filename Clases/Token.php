@@ -20,12 +20,10 @@ class Token{
   
   public static function AutenticarToken($jwt){
     try {
-      
       $decode = JWT::decode($jwt,"12391122", array('HS256'));
-      return (array) $decode;
+      return  $decode;
       
     } catch (\Throwable $th) {
-      echo "Error de autenticacion";
       return false;
     }
   }

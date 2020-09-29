@@ -1,6 +1,7 @@
 <?php 
 
 require_once "Clases/token.php";
+require_once "Clases/archivos.php";
 
 use \Firebase\JWT\JWT;
 
@@ -13,7 +14,8 @@ $mensaje = "";
 
 
 switch($path){
-
+    case '':
+    break;
 
     default:
     echo "Direccion Invalida";
