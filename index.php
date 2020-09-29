@@ -13,7 +13,7 @@ $headers = getallheaders();
 $token = $headers['token']??null;
 $mensaje = "";
 
-
+var_dump($path);
 
 switch($path){
     
@@ -133,7 +133,6 @@ switch($path){
         echo $mensaje;
 
     break;
-    case '/ingreso':
         
     default:
     echo "Ruta Invalida";
